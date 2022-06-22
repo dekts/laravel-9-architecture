@@ -1,5 +1,7 @@
 <?php
 
+use App\Helpers\Core\Helper;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/*
+ * Backend Routes
+ * Namespaces indicate folder structure
+ */
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', 'middleware' => []], function () {
+    /*
+     * These routes need view-backend permission
+     * (good if you want to allow more than one group in the backend,
+     * then limit the backend features by different roles or permissions)
+     *
+     * Note: Administrator has all permissions so you do not have to specify the administrator role everywhere.
+     * These routes can not be hit if the password is expired
+     */
+    Helper::includeRouteFiles(__DIR__ . '/backend/');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
-require __DIR__.'/example.php';
-require __DIR__.'/example-type.php';
