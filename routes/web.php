@@ -20,6 +20,11 @@ use Illuminate\Support\Facades\Route;
  * Namespaces indicate folder structure
  */
 Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', 'middleware' => []], function () {
+    
+    Route::get('/', function() {
+        return redirect()->route('admin.login');
+    });
+
     /*
      * These routes need view-backend permission
      * (good if you want to allow more than one group in the backend,

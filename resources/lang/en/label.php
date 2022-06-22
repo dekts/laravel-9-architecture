@@ -1,0 +1,40 @@
+<?php
+
+return [
+
+    'home' => 'Home',
+    'welcome_console_title' => 'Login MILESTONE',
+    'email' => 'Email',
+    'password' => 'Password',
+    'password_confirmation' => 'Confirm Password',
+    'forgot_password' => 'Forgot Password ?',
+    'forgotten_password' => 'Forgotten Password ?',
+    'reset_your_password' => 'Enter your email to reset your password',
+    'reset_password' => 'Reset Password',
+    'new_password' => 'New Password',
+    'confirm_password' => 'Confirm Password',
+
+    'name' => 'Name',
+    'first_name' => 'First Name',
+    'last_name' => 'Last Name',
+    'status' => 'Status',
+    'confirm_password' => 'Confirm Password',
+    'role' => 'Role',
+    'action' => 'Action',
+    'no' => 'No',
+    'date' => 'Date',
+    'all' => 'All',
+    'button' => [
+        'create' => 'Create',
+        'edit' => 'Edit',
+        'delete' => 'Delete',
+        'show' => 'Show',
+        'view' => 'View',
+        'list' => 'List',
+        'save' => 'Save',
+        'submit' => 'Submit',
+        'cancel' => 'Cancel',
+        'add' => 'Add',
+        'update' => 'Update',
+    ],
+];
