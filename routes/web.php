@@ -19,9 +19,10 @@ use Illuminate\Support\Facades\Route;
  * Backend Routes
  * Namespaces indicate folder structure
  */
+
 Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', 'middleware' => []], function () {
-    
-    Route::get('/', function() {
+
+    Route::get('/', function () {
         return redirect()->route('admin.login');
     });
 
@@ -34,4 +35,26 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', '
      * These routes can not be hit if the password is expired
      */
     Helper::includeRouteFiles(__DIR__ . '/backend/');
+});
+
+/*
+ * Frontend Routes
+ * Namespaces indicate folder structure
+ */
+
+Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []], function () {
+
+    Route::get('/', function () {
+        return view('frontend.welcome');
+    });
+
+    /*
+     * These routes need view-backend permission
+     * (good if you want to allow more than one group in the backend,
+     * then limit the backend features by different roles or permissions)
+     *
+     * Note: Administrator has all permissions so you do not have to specify the administrator role everywhere.
+     * These routes can not be hit if the password is expired
+     */
+    Helper::includeRouteFiles(__DIR__ . '/frontend/');
 });

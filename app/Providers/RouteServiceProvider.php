@@ -11,13 +11,22 @@ use Illuminate\Support\Facades\Route;
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * The path to the "home" route for your application.
+     * The path to the "frontend dashboard" route for your application.
      *
      * Typically, users are redirected here after authentication.
      *
      * @var string
      */
-    public const HOME = '/admin/dashboard';
+    public const HOME = 'dashboard';
+
+    /**
+     * The path to the "admin dashboard" route for your application.
+     *
+     * This is used by Laravel authentication to redirect users after login.
+     *
+     * @var string
+     */
+    public const ADMIN = 'admin/dashboard';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
